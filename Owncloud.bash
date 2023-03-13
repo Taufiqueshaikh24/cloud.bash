@@ -76,7 +76,7 @@ apachectl -t
 systemctl restart apache2
 mysql --password=1234 --user=root --host=localhost << eof
 create database ownclouddb;
-grant all privileges on ownclouddb.* to root@localhost identified by "1234";
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '1234';
 flush privileges;
 exit;
 eof
