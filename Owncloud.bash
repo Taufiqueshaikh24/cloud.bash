@@ -28,12 +28,6 @@ showMe(){
 }
 
 showMe    
-echo " Linuxsyr"
-echo "$(tput setaf 2)Thanks for using this script....."
-sleep 1s
-reset
-sleep 1s
-echo "$(tput setaf 2)linuxsyr-youtube....."
 sleep 2s
 reset
 apt-get update  # To get the latest package lists
