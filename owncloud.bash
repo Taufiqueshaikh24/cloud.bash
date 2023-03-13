@@ -36,10 +36,8 @@ sudo add-apt-repository ppa:ondrej/php --yes &> /dev/null
 sudo apt update
 sudo apt install php7.4 php7.4-{opcache,gd,curl,mysqlnd,intl,json,ldap,mbstring,mysqlnd,xml,zip} -y
 sudo apt-get install mysql-server-8.0
-sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'Root@123';
-exit;
 mysql --password=Root@123 --user=root --host=localhost << eof
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by '1234';
 CREATE DATABASE owncloud;
 CREATE USER 'taufique'@'localhost' IDENTIFIED BY 'Root@123';
 GRANT ALL PRIVILEGES ON owncloud.* TO 'taufique'@'localhost';
