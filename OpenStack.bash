@@ -5,10 +5,11 @@ echo "stack ALL=(ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/stack
 sudo -u stack -i
 git clone https://opendev.org/openstack/devstack
 cd devstack
-cat > local.conf
+cat > local.conf << 'EOL'
 [[local|localrc]]
 ADMIN_PASSWORD=secret
 DATABASE_PASSWORD=$ADMIN_PASSWORD
 RABBIT_PASSWORD=$ADMIN_PASSWORD
 SERVICE_PASSWORD=$ADMIN_PASSWORD
+EOL
 ./stack.sh
